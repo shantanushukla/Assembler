@@ -1,14 +1,10 @@
-symbolTable = dict()
+from Opcode import ifOpcode
 
 def ifLabel(a):
-	a = a.split(" ")
-	if ifOpcode(a[0]):
+	if ifOpcode(a):
 		return False
 	else:
 		return True
 
-def add_toSymbTable(locCounter, label):
-	if(ifLabel(label)):
-		symbolTable.__setitem__(label,locCounter)
 		
 	

@@ -1,19 +1,32 @@
-def pass1(file,):
+from symTable import ifLabel 
+from Opcode import ifOpcode
+
+def pass1():
 	locptr = 0
-	f = open("input.txt","r")
+	f1 = open("SymbolTable.txt","a")
+	arr = list()
 	
-	for x in f:
-		instr = x.readline()
-		arr = list(instr.split(" "))
-		if(ifLabel(arr[0]) and ifOpcode(arr[1])):
-			add_toSymbTable(arr[0],locptr)
+	with open("input.txt","r") as f:
+		for x in f:
+			x = x.strip("\n")
+			arr = x.split(' ')
+			
+			if(len(arr)>1 and ifLabel(arr[0]) and ifOpcode(arr[1])):
+				f1.write(arr[0]+" "+str(locptr)+"\n")
+				
 
-		elif(ifOpcode(arr[0]) and arr[0] == "INP"):
-			add_toSymbTable(arr[1],locptr)
+			elif(len(arr)>1 and ifOpcode(arr[0]) and arr[0] == "INP"):
+				f1.write(arr[1]+" "+str(locptr)+"\n")
+				
 
-		locptr += 1
+			elif(ifOpcode(arr[0]) and arr[0] == "STP"):
+				break
 
-	f.close()
+			locptr += 1
+
+	f1.close()
+
+	
 
 
 	

@@ -21,7 +21,7 @@ instr = {
 }
 
 def ifOpcode(a):
-    if dec.get(a) == None or instr.get(a) == None:
-        return False
-    else:
+    if (a in dec) or (a in instr):
         return True
+    else:
+        return False
