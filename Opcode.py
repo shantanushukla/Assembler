@@ -25,3 +25,18 @@ def ifOpcode(a):
         return True
     else:
         return False
+
+def ifLabel(a):
+	if ifOpcode(a):
+		return False
+	else:
+		return True
+
+def getOpcode(s):
+	if(s in dec):
+		return dec[s]
+
+	elif(s in instr):
+		return instr[s]
+
+	

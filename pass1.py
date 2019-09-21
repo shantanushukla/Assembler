@@ -1,5 +1,4 @@
-from symTable import ifLabel 
-from Opcode import ifOpcode
+from Opcode import *
 
 def pass1():
 	locptr = 0
