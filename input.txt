@@ -1,0 +1,8 @@
+CLA
+INP X
+INP Y
+M LAC X
+ADD Y
+BRP M
+SAC X
+STP
