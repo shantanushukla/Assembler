@@ -21,7 +21,7 @@ instr = {
 }
 
 def ifOpcode(a):
-    if (a in dec) or (a in instr):
+    if ((a in dec) or (a in instr)):
         return True
     else:
         return False
@@ -32,25 +32,9 @@ def ifLabel(a):
 	else:
 		return True
 
-def getOpcode(s):
-	count = 0
+def check(s):
+	if s in dec:
+		return True
 
-	for x in s:
-		if ifOpcode(x):
-			str1 = x
-			count += 1
-
-	return str1
-
-def getLabel(s):
-
-	count1 = 0
-
-	for x in s:
-		if ifLabel(x):
-			count1 += 1
-
-	if count1<=2 and 
-
-	return str1
-
+	else:
+		return False
