@@ -33,10 +33,24 @@ def ifLabel(a):
 		return True
 
 def getOpcode(s):
-	if(s in dec):
-		return dec[s]
+	count = 0
 
-	elif(s in instr):
-		return instr[s]
+	for x in s:
+		if ifOpcode(x):
+			str1 = x
+			count += 1
 
-	
+	return str1
+
+def getLabel(s):
+
+	count1 = 0
+
+	for x in s:
+		if ifLabel(x):
+			count1 += 1
+
+	if count1<=2 and 
+
+	return str1
+
