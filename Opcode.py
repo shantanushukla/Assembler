@@ -32,6 +32,12 @@ def ifLabel(a):
 	else:
 		return True
 
+def getOpcode(a):
+	if a in dec:
+		return dec[a]
+	elif a in instr:
+		return instr[a]
+
 def check(s):
 	if s in dec:
 		return True

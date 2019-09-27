@@ -11,19 +11,22 @@ def pass2():
 			arr = x1.split(' ')
 			wr.write(str(locptr)+" ")
 
-			if(len(arr)<2 and ifOpcode(arr[0])):
+			if len(arr) == 1:
 				wr.write(str(getOpcode(arr[0]))+"\n")
 
-			if(len(arr)>=2 and ifLabel(arr[1])):
+			if len(arr) == 2 and ifLabel(arr[0]):
+				wr.write(str(getOpcode(arr[1]))+"\n")
+
+			if len(arr) == 2 and ifOpcode(arr[0]):
 				wr.write(str(getOpcode(arr[0]))+" "+str(find_address(arr[1]))+"\n")
 
-			if(len(arr)>=2 and ifLabel(arr[0]) and ifLabel(arr[2]) and ifOpcode(arr[1])):
+			if(len(arr) > 2):
 				wr.write(str(getOpcode(arr[1]))+" "+str(find_address(arr[2]))+"\n")
 
 			locptr += 1
 
 def find_address(_str):
-	with open("SymbolTable.txt","r") as f:
+	with open("Symboltable.txt","r") as f:
 		for x in f:
 			x = x.strip("\n")
 			arr = x.split(' ')

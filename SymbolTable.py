@@ -1,22 +1,30 @@
-
 symTbl = dict()
 
 def addSym(tlc,var):
-	symTbl[var] = tlc
+	if var not in symTbl:
+		symTbl[var] = None
 
-def addSym(var):
-	symTbl[var] = None
+	if not symTbl[var] == None:
+		print("Error: Sysmbol declared twice")
+	else:
+		symTbl[var] = tlc
+
+def addSym1(var):
+	if var not in symTbl:
+		symTbl[var] = None
 
 def writeTbl():
-	f1 = open("SymbolTable.txt","a")
-	bool a = False
+	f1 = open("Symboltable.txt","a")
+	a = False
 
-	for key, value in symTbl.iteritems():
-    	if value is None:
-    		a = True
-    		print("Error")
-    		return 
+	for key,value in symTbl.items():
+		if value is None:
+			a = True
+			print("Error: Used symbol not defined") 
 
-    if(not a):
-	    for key, value in symTbl.iteritems():
-	    	f1.write(key+" "+value+"\n")  	
+	if(not a):
+	    for key,value in symTbl.items():
+	    	f1.write(key+" "+str(value)+"\n")  
+
+	f1.close()	
+	return

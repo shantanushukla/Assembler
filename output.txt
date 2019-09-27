@@ -1,7 +1,0 @@
-0 0001 None
-1 0011 None
-2 0010 None
-3 0001 None
-4 0011 None
-5 1010 None
-6 1100
