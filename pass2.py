@@ -9,7 +9,7 @@ def pass2():
 		for x1 in f1:
 			x1 = x1.strip("\n")
 			arr = x1.split(' ')
-			wr.write(str(locptr)+" ")
+			wr.write(str(bin(locptr))+" ")
 
 			if len(arr) == 1:
 				wr.write(str(getOpcode(arr[0]))+"\n")
