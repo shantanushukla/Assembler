@@ -2,5 +2,7 @@ from Opcode import *
 from pass1 import *
 from pass2 import *
 
-pass1()
-pass2()
+p = pass1()
+
+if not p:
+	pass2()
