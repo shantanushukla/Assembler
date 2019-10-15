@@ -26,11 +26,17 @@ def ifOpcode(a):
     else:
         return False
 
-def ifLabel(a):
+def ifVariable(a):
 	if ifOpcode(a):
 		return False
 	else:
 		return True
+
+def ifLabel(a):
+    if ifOpcode(a):
+        return False
+    elif (a[-1] == ":"):
+        return True
 
 def getOpcode(a):
 	if a in dec:

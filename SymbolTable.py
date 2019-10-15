@@ -1,16 +1,27 @@
+from pass1 import *
+
 symTbl = dict()
 
 def addSym(tlc,var):
+	if ifLabel(var):
+		var = var[0:-1]
 	if var not in symTbl:
 		symTbl[var] = None
+		return False
 
 	if not symTbl[var] == None:
-		print("Error: Symbol/Label declared twice")
+		if var in labels:
+			print("Error: Label declared twice"+"( at: "+str(tlc)+")")
+		else:
+			print("Error: Symbol declared twice"+"( at: "+str(tlc)+")")
 		return True
 	else:
 		symTbl[var] = tlc
+		return False
 
 def addSym1(var):
+	if ifLabel(var):
+		var = var[0:-1]
 	if var not in symTbl:
 		symTbl[var] = None
 
